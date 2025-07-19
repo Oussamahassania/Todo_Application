@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Todo Application</title>
+</head>
+<body>
+<h1>hello</h1>
+<form action="/tasks/create" method="post">
+    <div>
+        <input type="text" name="title" placeholder="add a new task" required>
+    </div>
+    <div>
+        <button type="submit">Add</button>
+    </div>
+
+</form>
+<th:block th:each="task : ${tasks}">
+    <div>
+        <span th:text="${task.title}">Task title</span> <br>
+        <button type="submit">click to delete this task</button>
+    </div>
+</th:block>
+</body>
+</html>
